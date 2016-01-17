@@ -1,7 +1,7 @@
-package com.suchasplus.nmea.vo;
+package com.suchasplus.nmea.vo.ais;
 
 import com.suchasplus.nmea.base.AbstractNmeaObject;
-import com.suchasplus.nmea.type.Sentence;
+import com.suchasplus.nmea.type.SentenceIdentifiers;
 
 /**
  * Powered by suchasplus@gmail.com on 2016/1/18.
@@ -10,7 +10,7 @@ import com.suchasplus.nmea.type.Sentence;
  */
 public class VdmNmeaObject extends AbstractNmeaObject {
     public VdmNmeaObject() {
-        objType = Sentence.VDM;
+        objType = SentenceIdentifiers.ALM.toString();
     }
 
     @Override

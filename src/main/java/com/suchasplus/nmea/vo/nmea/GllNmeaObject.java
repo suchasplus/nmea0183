@@ -1,9 +1,9 @@
-package com.suchasplus.nmea.vo;
+package com.suchasplus.nmea.vo.nmea;
 
 import com.suchasplus.nmea.base.AbstractNmeaObject;
 import com.suchasplus.nmea.type.LatitudeHeading;
 import com.suchasplus.nmea.type.LongitudeHeading;
-import com.suchasplus.nmea.type.Sentence;
+import com.suchasplus.nmea.type.SentenceIdentifiers;
 
 /**
  * Powered by suchasplus@gmail.com on 2016/1/18.
@@ -34,7 +34,7 @@ import com.suchasplus.nmea.type.Sentence;
 public class GllNmeaObject extends AbstractNmeaObject {
 
     public GllNmeaObject() {
-        objType = Sentence.GLL;
+        objType = SentenceIdentifiers.GLL.toString();
     }
 
     private String latitude;

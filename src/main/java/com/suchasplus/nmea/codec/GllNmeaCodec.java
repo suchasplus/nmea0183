@@ -3,7 +3,7 @@ package com.suchasplus.nmea.codec;
 import com.suchasplus.nmea.base.AbstractNmeaCodec;
 import com.suchasplus.nmea.base.AbstractNmeaObject;
 import com.suchasplus.nmea.util.NmeaCheckSum;
-import com.suchasplus.nmea.vo.GllNmeaObject;
+import com.suchasplus.nmea.util.NmeaConst;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,8 +18,6 @@ public class GllNmeaCodec extends AbstractNmeaCodec {
 
     final private static Logger logger = LoggerFactory.getLogger(GllNmeaCodec.class);
 
-    final private static String HEADER = "$";
-
     @Override
     public AbstractNmeaObject decode(List<String> Content) {
 
@@ -32,9 +30,9 @@ public class GllNmeaCodec extends AbstractNmeaCodec {
         String content = obj.assemble();
 
         String str = (new StringBuilder())
-                .append(HEADER)
+                .append(NmeaConst.SentenceStartDelimiter)
                 .append(content)
-                .append(SUM_SPLIT)
+                .append(NmeaConst.CheckSumFieldDelimiter)
                 .append(NmeaCheckSum.generateSum(content))
                 .toString();
 

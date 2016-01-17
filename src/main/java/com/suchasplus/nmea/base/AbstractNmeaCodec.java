@@ -9,8 +9,6 @@ import java.util.Observer;
  */
 abstract public class AbstractNmeaCodec extends Observable implements Observer{
 
-    final protected String SUM_SPLIT = "*";
-
     abstract public AbstractNmeaObject decode(List<String> Content);
     abstract public List<String> encode(AbstractNmeaObject obj);
 
